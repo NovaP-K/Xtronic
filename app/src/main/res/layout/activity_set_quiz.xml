@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#065D7E"
+    tools:context=".SetQuiz">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/QuizTimeLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/QTime"
+                android:fontFamily="@font/poplarstd"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textSize="50sp"
+                android:elevation="10dp"  />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/SetQuizBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/simple_white_button"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/SetQuizSubmitButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/QuizTimeLogo"
+                app:layout_constraintVertical_bias="0.49">
+
+                <EditText
+                    android:id="@+id/QuizQuestionBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="45dp"
+                    android:layout_marginEnd="25dp"
+                    android:padding="20dp"
+                    android:inputType="textMultiLine"
+                    android:textSize="16sp"
+                    android:textColorHint="@android:color/black"
+                    android:hint="@string/QBoxhere"
+                    android:fontFamily="@font/dosis_regular"
+                    android:background="@drawable/simple_grey_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+
+
+                <RelativeLayout
+                    android:id="@+id/Option1Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/QuizQuestionBox">
+
+                    <RadioButton
+                        android:id="@+id/Option1Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:background="@drawable/simple_lightyellow_button"
+                        android:button="@android:color/transparent"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/Option1EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/simple_light_cyan_button"
+                        android:fontFamily="@font/dosis_regular"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Option2Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Option1Layout">
+
+                    <RadioButton
+                        android:id="@+id/Option2Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:background="@drawable/simple_lightyellow_button"
+                        android:button="@android:color/transparent"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/Option2EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/simple_light_cyan_button"
+                        android:fontFamily="@font/dosis_regular"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Option3Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Option2Layout"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/Option3Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:background="@drawable/simple_lightyellow_button"
+                        android:button="@android:color/transparent"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/Option3EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/simple_light_cyan_button"
+                        android:fontFamily="@font/dosis_regular"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Option4Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Option3Layout"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/Option4Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignWithParentIfMissing="true"
+                        android:background="@drawable/simple_lightyellow_button"
+                        android:button="@android:color/transparent"
+                        android:paddingStart="10dp" />
+
+                    <EditText
+                        android:id="@+id/Option4EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="50dp"
+                        android:background="@drawable/simple_light_cyan_button"
+                        android:fontFamily="@font/dosis_regular"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/MoreOptionsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="40dp"
+                    android:background="@drawable/simple_dashed_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Option4Layout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/dosis_regular"
+                        android:text="@string/AddMoreOptions"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        app:drawableEndCompat="@drawable/ic_plus"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/MoreQuestionsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/simple_pink_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/AddMoreQuestions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/MoreOptionsButton"
+                    android:fontFamily="@font/yanone"
+                    android:textSize="23sp"
+                    android:textColor="@android:color/white"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/SetQuizSubmitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/simple_lightyellow_button"
+                android:fontFamily="@font/yanone"
+                android:text="@string/button6"
+                android:textColor="#FFFFFF"
+                android:textSize="33sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/progressViewSetQuiz"
+        layout="@layout/custom_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

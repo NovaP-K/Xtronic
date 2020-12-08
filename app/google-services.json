@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "705751694023",
+    "firebase_url": "https://xtronic-nova.firebaseio.com",
+    "project_id": "xtronic-nova",
+    "storage_bucket": "xtronic-nova.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705751694023:android:5620bfab4a277bbea15ce2",
+        "android_client_info": {
+          "package_name": "com.novaapps.xtronic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705751694023-dsqe94eth37u1ms99gf1to1vn6tjmvuu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.novaapps.xtronic",
+            "certificate_hash": "2e354e504b1a2ee2093172f5cf69c296c2491043"
+          }
+        },
+        {
+          "client_id": "705751694023-gsgv4bhegcbp8trgra4uqgnejmr9sgue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLM7NebEHJKZoZytE4DOh0EE7xELjw9ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705751694023-gsgv4bhegcbp8trgra4uqgnejmr9sgue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

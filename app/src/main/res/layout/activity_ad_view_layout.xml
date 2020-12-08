@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayoutAdView"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdViewLayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enjoy Some Ads"
+        android:textAlignment="center"
+        android:fontFamily="@font/yanone"
+        android:textSize="30sp"
+        android:background="@color/JoinQuizStatus"
+        android:padding="20dp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="20dp"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/AdMobAd1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="MEDIUM_RECTANGLE"
+        app:adUnitId="ca-app-pub-4367529646495650/7972550711" />
+
+    <com.amazon.device.ads.AdLayout
+        android:layout_margin="20dp"
+        android:id="@+id/AmazonAdView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/AdMobAd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="MEDIUM_RECTANGLE"
+        app:adUnitId="ca-app-pub-4367529646495650/3110928669" />
+
+    <com.amazon.device.ads.AdLayout
+        android:layout_margin="20dp"
+        android:id="@+id/AmazonAdView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/adLoadedStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thanks for Coming"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:fontFamily="@font/dosis_regular"
+        />
+
+</LinearLayout>

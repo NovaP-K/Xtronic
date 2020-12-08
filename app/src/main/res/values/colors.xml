@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0C638F</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="redColor">#E30B0B</color>
+    <color name="WhiteColor">#FFFFFF</color>
+    <color name="BlackColor">#000000</color>
+
+    <color name="bg_splashscreen">#0C638F</color>
+    <color name="bg_quizSharing">#520585</color>
+    <color name="bg_getIdentifier">#441919</color>
+    <color name="bg_studentList">#F8E2E2</color>
+    <color name="bg_answerSheet">#61109C</color>
+
+<!--    HomeScreen-->
+    <color name="CircularViewColor">#E95578BF</color>
+
+<!--    AnswerSheet-->
+    <color name="CorrectQColor">#038F03</color>
+    <color name="WrongQColor">#E30B0B</color>
+
+<!--    Status Bar Color-->
+    <color name="SplashScreenStatus">#0C638F</color>
+    <color name="HomeScreenStatus">#000658</color>
+    <color name="QuizInfoBasicStatus">#00217D</color>
+    <color name="QuizInfoSetIdentifierStatus">#009DC5</color>
+    <color name="SetQuizStatus">#065D7E</color>
+    <color name="QuizSharingStatus">#FFFFFF</color>
+    <color name="JoinQuizStatus">#AF0D0D</color>
+    <color name="GetIdentifierStatus">#441919</color>
+    <color name="QuizTimeStatus">#FFFFFF</color>
+    <color name="QuizSubmissionStatus">#FFFFFF</color>
+    <color name="ResultsStatus">#18530A</color>
+    <color name="QuizStatsStatus">#0A517A</color>
+    <color name="StudentListStatus">#131212</color>
+    <color name="AnswerSheetStatus">#61109C</color>
+
+</resources>

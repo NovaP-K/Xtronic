@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_splashscreen">
+
+
+    <LinearLayout
+        android:id="@+id/aboutDeveloperLAyout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_splashscreen"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".AboutDeveloper">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/DeveloperProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:src="@drawable/circular_view_color"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:fontFamily="@font/yanone"
+            android:padding="10dp"
+            android:text="@string/AboutMe"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/ToDarkGomasu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/simple_red_button"
+            android:fontFamily="@font/dosis_regular"
+            android:padding="15dp"
+            android:text="Subscribe to Youtube"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/ToAdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/simple_light_cyan_button"
+            android:fontFamily="@font/dosis_regular"
+            android:padding="15dp"
+            android:text="View Some Ads"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/EmailMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/simple_white_button"
+            android:fontFamily="@font/dosis_regular"
+            android:padding="15dp"
+            android:text="Email me"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</ScrollView>

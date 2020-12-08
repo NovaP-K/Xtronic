@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.novaapps.xtronic">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/xtronic_ico"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/xtronic_ico"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".AboutDeveloper"/>
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6559163733114750~7531365886" />
+
+        <activity
+            android:name=".AdViewLayout"
+            android:hardwareAccelerated="true" />
+        <activity android:name=".AnswerSheet" />
+        <activity android:name=".StudentList" />
+        <activity android:name=".QuizStats" />
+        <activity android:name=".Results" />
+        <activity android:name=".QuizSubmission" />
+        <activity
+            android:name=".QuizTime"
+            android:launchMode="singleTop"
+            android:resizeableActivity="false"
+            tools:targetApi="n" />
+        <activity android:name=".GetIdentifier" />
+        <activity android:name=".JoinQuiz" >
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="xtronicquiz.com"
+                    android:pathPrefix="/joinquiz/id"/>
+                <data android:scheme="http"
+                    android:host="xtronicquiz.com"
+                    android:pathPrefix="/joinquiz/id"/>
+                <data android:scheme="app"
+                    android:host="xtronicquiz"
+                    android:pathPrefix="/joinquiz/id"/>
+
+            </intent-filter>
+        </activity>
+        <activity android:name=".QuizSharing" />
+        <activity android:name=".SetQuiz" />
+        <activity android:name=".QuizInfoSetIdentifier" />
+        <activity android:name=".QuizInfoBasic" />
+        <activity android:name=".HomeScreen" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.amazon.device.ads.AdActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+    </application>
+
+</manifest>
