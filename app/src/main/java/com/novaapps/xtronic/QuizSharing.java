@@ -24,6 +24,7 @@ public class QuizSharing extends AppCompatActivity {
     //Variable
     private String ID ;
     String TextToShare ;
+    String TextToShare_WhatsApp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +91,20 @@ public class QuizSharing extends AppCompatActivity {
     }
 
     private void SetTextToShare(){
-        TextToShare = "Join The Xtronic Quiz : #" + ID +
-                " \n You can Join The Quiz by  Downloading Xtronic App and then Clicking the Link below \n " +
+        TextToShare =
+                "Join The Xtronic Quiz : #" + ID  + "\n" +
+                        "You can Join The Quiz by  Downloading Xtronic App from the Link Below " + "\n" +
+                        "[Play Store Link ]" + "\n" +
+                        "https://play.google.com/store/apps/details?id=com.novaapps.xtronic" + "\n" +
+                        "And Click Below to Join The Quiz in the App "   + "\n" +
+                        "https://xtronicquiz.com/joinquiz/id/"+ ID;
+
+        TextToShare_WhatsApp =
+                "Join The Xtronic Quiz : *#" + ID + "*" + "\n" +
+                "You can Join The Quiz by  Downloading Xtronic App from the Link Below " + "\n" +
+                 "[Play Store Link ]" + "\n" +
+                 "https://play.google.com/store/apps/details?id=com.novaapps.xtronic" + "\n" +
+                 "And Click Below to Join The Quiz in the App "   + "\n" +
                 "https://xtronicquiz.com/joinquiz/id/"+ ID;
     }
 

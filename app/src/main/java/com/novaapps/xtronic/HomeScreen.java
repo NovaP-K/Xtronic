@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.annotation.SuppressLint;
@@ -12,16 +13,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Log;
-import android.view.Gravity;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -46,7 +44,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomeScreen extends AppCompatActivity {
 
     private static final String TAG = "HomeScreen";
-    private int ClickCount = 8 ;
 
     //ActivityBinding
     CircleImageView LoginProfile;
@@ -145,7 +142,7 @@ public class HomeScreen extends AppCompatActivity {
            @Override
            public void onDataChange(@NonNull DataSnapshot snapshot) {
                if (snapshot.exists()){
-                   CreateMsgAlert(snapshot.getValue(String.class));
+                   CreateAppNotificationAlert(snapshot.getValue(String.class));
                }
            }
 
@@ -184,7 +181,7 @@ public class HomeScreen extends AppCompatActivity {
     public void LoadUserProfileImage(){
 
             Log.d(TAG, "Loading : " + ui_data.get_UserProfile());
-            Glide.with(this).load(ui_data.get_UserProfile()).placeholder(getResources().getDrawable(R.drawable.circular_view_color)).into(LoginProfile);
+            Glide.with(this).load(ui_data.get_UserProfile()).placeholder(ResourcesCompat.getDrawable(getApplicationContext().getResources() , R.drawable.circular_view_color , getApplicationContext().getTheme())).into(LoginProfile);
 
 
     }
@@ -231,6 +228,17 @@ public class HomeScreen extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+    private void CreateAppNotificationAlert(String Msg){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Set other dialog properties
+        builder.setCancelable(true);
+        //Set Dialog Msg
+        builder.setMessage(Msg);
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
     private void SignOut(){
             FirebaseAuth.getInstance().signOut();
             ui_data.LogOut();
@@ -246,6 +254,7 @@ public class HomeScreen extends AppCompatActivity {
             }
         }
     };
+
     private void LoadBannerAd(){
         AdRequest adRequest1 = new AdRequest.Builder().build();
         AD1.loadAd(adRequest1);

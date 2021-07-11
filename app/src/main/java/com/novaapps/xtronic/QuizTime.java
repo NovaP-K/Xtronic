@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 
@@ -35,12 +33,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.novaapps.xtronic.helpingclass.CustomProgress;
+import com.novaapps.xtronic.helpingclass.Encrypto;
 import com.novaapps.xtronic.helpingclass.QuizBasicInfoData;
 import com.novaapps.xtronic.helpingclass.QuizQuestions;
 import com.novaapps.xtronic.helpingclass.UI_Data;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -69,10 +67,10 @@ public class QuizTime extends AppCompatActivity {
 
     //Objects
     CountDownTimer countDownTimer ;
-    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<QuizQuestions>();
+    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<>();
     QuizQuestions quizQuestions;
     QuizBasicInfoData quizBasicInfoData ;
-    ArrayList<String> UserAnswer = new ArrayList<String>();
+    ArrayList<String> UserAnswer = new ArrayList<>();
     UI_Data uiData ;
 
     @Override
@@ -203,6 +201,12 @@ public class QuizTime extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        CloseQuiz();
+        super.onDestroy();
+    }
+
     private void CloseQuiz(){
 
         showNotification(getApplicationContext() , "Xtronic" , "Quiz Closed" , reqCode , true);
@@ -277,6 +281,7 @@ public class QuizTime extends AppCompatActivity {
     }
 
     private void ReloadQuestions(){
+        Encrypto encrypto = new Encrypto();
          quizQuestions = questionsArrayList.get(Index);
 
          QuestionTextView.setText(quizQuestions.getQuestion());
@@ -285,7 +290,7 @@ public class QuizTime extends AppCompatActivity {
          Opt2Text = quizQuestions.getOption2();
          Opt3Text = quizQuestions.getOption3();
          Opt4Text = quizQuestions.getOption4();
-         CorrectAns = quizQuestions.getANS();
+         CorrectAns = encrypto.Decrypt(quizQuestions.getANS());
 
 
          if(!Opt1Text.isEmpty())
@@ -336,8 +341,6 @@ public class QuizTime extends AppCompatActivity {
                 countDownTimer = new CountDownTimer(tempTimer, 1000) {
                     @Override
                     public void onTick(long l) {
-                        if (isGAssistantRunning())
-                            CreateMsgAlert("You are not Allowed to Use Google Assistant during the Quiz. \n The Quiz will be closed in few Seconds");
                         UpdateCountdownText(l);
                     }
 
@@ -350,8 +353,6 @@ public class QuizTime extends AppCompatActivity {
             countDownTimer = new CountDownTimer(TimeLeftInMillis, 1000) {
                 @Override
                 public void onTick(long l) {
-                    if (isGAssistantRunning())
-                        CreateMsgAlert("You are not Allowed to Use Google Assistant during the Quiz. \n The Quiz will be closed in few Seconds");
                     TimeLeftInMillis = l;
                     UpdateCountdownText(TimeLeftInMillis);
                 }
@@ -425,30 +426,6 @@ public class QuizTime extends AppCompatActivity {
        startActivity(intent);
        finish();
    }
-    private void CreateMsgAlert(String Msg){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        // Set other dialog properties
-        builder.setCancelable(true);
-        //Set Dialog Msg
-        builder.setMessage(Msg);
-        builder.setTitle("Error");
-        // Create the AlertDialog
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-    public  boolean isGAssistantRunning( ) {
-        final ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        final List<ActivityManager.RunningAppProcessInfo> procInfos = activityManager.getRunningAppProcesses();
-        if (procInfos != null)
-        {
-            for (final ActivityManager.RunningAppProcessInfo processInfo : procInfos) {
-                if (processInfo.processName.equals("com.google.android.apps.googleassistant")) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
 }

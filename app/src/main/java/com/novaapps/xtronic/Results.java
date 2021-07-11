@@ -2,14 +2,10 @@ package com.novaapps.xtronic;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -240,7 +236,8 @@ public class Results extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                     ArrayList<QuizBasicInfoData> quizBasicInfoDataArrayList = new ArrayList<>();
-                    QuizBasicInfoData quizBasicInfoData = new QuizBasicInfoData();
+                    new QuizBasicInfoData();
+                    QuizBasicInfoData quizBasicInfoData;
                    for (int i = 1 ; i <=IDList.size() ; i++){
                        quizBasicInfoData = snapshot.child(IDList.get(i-1)).getValue(QuizBasicInfoData.class);
                        quizBasicInfoDataArrayList.add(quizBasicInfoData);

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.amazon.device.ads.Ad;
 import com.amazon.device.ads.AdError;
@@ -15,18 +15,16 @@ import com.amazon.device.ads.AdProperties;
 import com.amazon.device.ads.AdRegistration;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
+
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.util.Objects;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+
 
 public class AdViewLayout extends AppCompatActivity {
 
@@ -118,6 +116,7 @@ public class AdViewLayout extends AppCompatActivity {
         Ad3.setListener(new com.amazon.device.ads.AdListener() {
             @Override
             public void onAdLoaded(Ad ad, AdProperties adProperties) {
+                Ad3.showAd();
                 HideAdLoadedStatus();
             }
 
@@ -144,6 +143,7 @@ public class AdViewLayout extends AppCompatActivity {
         Ad4.setListener(new com.amazon.device.ads.AdListener() {
             @Override
             public void onAdLoaded(Ad ad, AdProperties adProperties) {
+                Ad3.showAd();
                 HideAdLoadedStatus();
             }
 

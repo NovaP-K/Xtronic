@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "705751694023-vriof5am6enap9n0qjlov6bcppfns07d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.novaapps.xtronic",
+            "certificate_hash": "36176929f5afe5c204f262649289bdd8ab7bfe0c"
+          }
+        },
+        {
           "client_id": "705751694023-gsgv4bhegcbp8trgra4uqgnejmr9sgue.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -41,7 +49,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-4367529646495650~3523876107"
     }
   ],
   "configuration_version": "1"

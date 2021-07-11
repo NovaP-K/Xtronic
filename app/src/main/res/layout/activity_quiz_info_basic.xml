@@ -11,8 +11,8 @@
 
             <ImageView
                 android:id="@+id/XLogo_QIB"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="@dimen/XLogo_QIBSize"
+                android:layout_height="@dimen/XLogo_QIBSize"
                 android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -54,7 +54,7 @@
                     android:ems="10"
                     android:fontFamily="@font/yanone"
                     android:inputType="textPersonName"
-                    android:padding="15dp"
+                    android:padding="@dimen/QuizInfoBasicInputBoxPadding"
                     android:textSize="20sp" />
 
                 <TextView
@@ -79,7 +79,7 @@
                     android:ems="10"
                     android:fontFamily="@font/yanone"
                     android:inputType="textPersonName"
-                    android:padding="15dp"
+                    android:padding="@dimen/QuizInfoBasicInputBoxPadding"
                     android:textSize="20sp" />
 
                 <TextView
@@ -104,7 +104,7 @@
                     android:fontFamily="@font/yanone"
                     android:ems="10"
                     android:inputType="number"
-                    android:padding="15dp"
+                    android:padding="@dimen/QuizInfoBasicInputBoxPadding"
                     android:hint="@string/hint_duration"
                     android:textSize="20sp" />
 

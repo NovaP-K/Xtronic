@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    HomeScreen-->
+    <dimen name="XLogoSize">100dp</dimen>
+    <dimen name="LoginProfileSize">120dp</dimen>
+    <dimen name="LoginProfileEndMargin">20dp</dimen>
+    <dimen name="obj1HomeScreenTopMargin">40dp</dimen>
+    <dimen name="adViewHomeScreenHeight">50dp</dimen>
+
+    <!--    QuizInfoBasic-->
+    <dimen name="QuizInfoBasicInputBoxPadding">15dp</dimen>
+    <dimen name="XLogo_QIBSize">160dp</dimen>
+
+    <!--    Quiz Info Set Identifier-->
+    <dimen name="IdentifierInputPadding">20dp</dimen>
+    <dimen name="SetIdentifierHeadingTopMargin">80dp</dimen>
+
+    <!--    QuizSharing-->
+    <dimen name="TrophyLayoutContainerSize">170dp</dimen>
+    <dimen name="TrophyLayoutSize">100dp</dimen>
+    <dimen name="QuizCreatedTxtStartMargin">80dp</dimen>
+    <dimen name="QuizCreatedTxtTopMargin">50dp</dimen>
+    <dimen name="QuizCreatedTxtTextSize">45sp</dimen>
+    <dimen name="ShareIdTxtTextSize">40sp</dimen>
+
+    <!--    Join Quiz-->
+    <dimen name="JoinCodeTextPadding">10dp</dimen>
+    <dimen name="joinButtonTopMargin">80dp</dimen>
+    <dimen name="joinButtonStartMargin">90dp</dimen>
+
+    <!--    GetIdentifier-->
+    <dimen name="headingGetIdentifierTopMargin">80dp</dimen>
+    <dimen name="IdentifierButtonAndBoxPadding">10dp</dimen>
+
+    <!--    QuizSubmission-->
+    <dimen name="ScoreTxtTopMargin">50dp</dimen>
+
+</resources>

@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -59,7 +57,7 @@ public class JoinQuiz extends AppCompatActivity {
 
         Intent intent=getIntent();
 
-        if(intent!=null&&intent.getData()!=null){
+        if(intent!=null && intent.getData()!=null){
             if (ui_data.IsLoggedIn()){
                 Uri uri = intent.getData();
                 String ID_Intent ;
@@ -68,6 +66,10 @@ public class JoinQuiz extends AppCompatActivity {
                     ID_Intent = pathSegments.get(2);  // This will give you prefix as path
                     QuizCode.setText(ID_Intent.toUpperCase());
                 }
+            }
+            else{
+                Toast.makeText(this, "You need Login first", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext() , HomeScreen.class));
             }
         }
 
@@ -168,10 +170,6 @@ public class JoinQuiz extends AppCompatActivity {
 
 
     }
-
-    private void CheckIfUserIsAllowedForQuiz(){}
-
-    private void CheckIfUserIsBlockedForQuiz(){}
 
     private void getQuizInfo(final DatabaseReference ref) {
 

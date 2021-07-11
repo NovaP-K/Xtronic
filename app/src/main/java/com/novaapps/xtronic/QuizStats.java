@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -163,7 +163,7 @@ public class QuizStats extends AppCompatActivity {
                     ToNextActivity(questionsArrayList, Answers);
                 }
                 else{
-                    CreateMsgAlert("User Have not Completed the Quiz");
+                    CreateMsgAlert();
                 }
             }
             @Override
@@ -186,20 +186,21 @@ public class QuizStats extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void CreateMsgAlert(String Msg){
+    private void CreateMsgAlert(){
         customProgress.stopProgressBar();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         // Set other dialog properties
         builder.setCancelable(true);
         //Set Dialog Msg
-        builder.setMessage(Msg);
+        builder.setMessage("User Have not Completed the Quiz");
         builder.setTitle("Error");
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
         dialog.show();
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateView(JoinedUserInfo userInfo , Long CorrectQ , Long TotalQ){
 
         QuizIDTxtView.setText(ID);
@@ -207,7 +208,10 @@ public class QuizStats extends AppCompatActivity {
         UserNameTxtView.setText(userInfo.get_Name());
         TopicTxtView.setText(quizBasicInfoData.get_TopicName());
         CreatorTxtView.setText(quizBasicInfoData.get_CreatorName());
-        DurationTxtView.setText(quizBasicInfoData.get_Duration() + " Min");
+        if(quizBasicInfoData.get_Duration() == 0)
+            DurationTxtView.setText("No Time Limit");
+        else
+            DurationTxtView.setText(quizBasicInfoData.get_Duration() + " Min");
         CorrectQTxtView.setText(String.valueOf(CorrectQ));
         TotalQTxtView.setText(String.valueOf(TotalQ));
 

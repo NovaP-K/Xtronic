@@ -16,9 +16,18 @@
     <string name="Tname">Topic Name</string>
     <string name="Dur">Duration (In Minutes )</string>
     <string name="hint_duration">Leave If No Time-limit</string>
+
     <!--    QuizSetIdentifier-->
     <string name="button5">Proceed</string>
     <string name="SIdentifier">Set Identifier</string>
+    <string name="SIdentifierHelp">
+        Identifier is a Value that will be asked from Students\n
+        It will help you identify them.\n
+          Eg: \n
+        Enter <b>\"Roll Number\"</b> below ,\n If you want to ask
+            Roll Number from the person who is going to
+            give the Quiz
+    </string>
 
     <!--    SetQuiz-->
     <string name="button6">Submit</string>
@@ -73,9 +82,9 @@
         <i>
         \" Hey Everyone ,\n\n
         My Name\'s  <b><u>Prince</u></b> ,
-        The Creator of this  too Simple App.
+        The Creator of this Simple App.
         There are lots of app available in the market but most of them were frustrating and Complex . So I designed this Quiz App ,
-        Where everything is Simple and Ads are managed and Shown to you only when you want to see them .\nI request you to See Some Ads to Contribute to Developer(Aur wo to mai hi huu).
+        Where everything is Simple and Ads are managed and Shown to you only when you want to see them .\nI request you to See Some Ads to Contribute to Developer(Cute wala emoji).
         \n\n
         Dhanyawad(Thanks) \"
         </i>

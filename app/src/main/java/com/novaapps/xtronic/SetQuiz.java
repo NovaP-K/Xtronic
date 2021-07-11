@@ -1,9 +1,11 @@
 package com.novaapps.xtronic;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.novaapps.xtronic.helpingclass.CustomProgress;
+import com.novaapps.xtronic.helpingclass.Encrypto;
 import com.novaapps.xtronic.helpingclass.QuizQuestions;
 import com.novaapps.xtronic.helpingclass.UI_Data;
 
@@ -50,7 +53,7 @@ public class SetQuiz extends AppCompatActivity {
     boolean IsQuestionAdded = false ;
 
     //Objects
-    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<QuizQuestions>();
+    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<>();
     UI_Data ui_data ;
 
     @Override
@@ -391,7 +394,6 @@ public class SetQuiz extends AppCompatActivity {
                 }
             });
 
-
             RefToQues.child(ui_data.get_UserUid()).child(ID).setValue(questionsArrayList).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -405,7 +407,7 @@ public class SetQuiz extends AppCompatActivity {
                         customProgress.stopProgressBar();
                         Toast.makeText(SetQuiz.this, "Error 2: " + e.toString(), Toast.LENGTH_SHORT).show();
                     }
-                });;
+                });
 
         }
         else {
@@ -430,7 +432,7 @@ public class SetQuiz extends AppCompatActivity {
 
         if (CheckForError()){
             QuizQuestions questions = new QuizQuestions();
-
+            Encrypto encrypto = new Encrypto();
             //Add  Question to Objects
             questions.setQno(Qno);
             questions.setQuestion(Question);
@@ -438,7 +440,7 @@ public class SetQuiz extends AppCompatActivity {
             questions.setOption2(Opt2);
             questions.setOption3(Opt3);
             questions.setOption4(Opt4);
-            questions.setANS(Ans);
+            questions.setANS(encrypto.Encrypt(Ans));
 
             //Add Question to List
             questionsArrayList.add(questions);
@@ -447,4 +449,29 @@ public class SetQuiz extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Add the buttons
+        builder.setPositiveButton("Stay", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(getApplicationContext() , HomeScreen.class);
+                startActivity(intent);
+            }
+        });
+        // Set other dialog properties
+        builder.setCancelable(false);
+        //Set Dialog Msg
+        builder.setMessage("Exiting the Application will erase all the Question you have added so far");
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }

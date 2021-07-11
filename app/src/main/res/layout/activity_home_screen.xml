@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/XLogo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/XLogoSize"
+            android:layout_height="@dimen/XLogoSize"
             android:layout_marginStart="20dp"
             android:layout_marginTop="70dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,9 +45,9 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/LoginProfile"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="@dimen/LoginProfileSize"
+            android:layout_height="@dimen/LoginProfileSize"
+            android:layout_marginEnd="@dimen/LoginProfileEndMargin"
             android:elevation="10dp"
             android:src="@drawable/circular_view_color"
             app:layout_constraintBottom_toBottomOf="@+id/obj1HomeScreen"
@@ -60,44 +60,10 @@
             android:id="@+id/obj1HomeScreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/obj1HomeScreenTopMargin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/obj_moon" />
-
-        <Button
-            android:id="@+id/ResultQuizButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="55dp"
-            android:background="@drawable/simple_white_button"
-            android:elevation="10dp"
-            android:fontFamily="@font/yanone"
-            android:text="@string/button3"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/JoinQuizButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/simple_white_button"
-            android:elevation="10dp"
-            android:fontFamily="@font/yanone"
-            android:text="@string/button2"
-            android:textSize="21sp"
-            app:layout_constraintBottom_toTopOf="@+id/ResultQuizButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/CreateQuizButton"
@@ -115,7 +81,38 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
-
+        <Button
+            android:id="@+id/JoinQuizButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/simple_white_button"
+            android:elevation="10dp"
+            android:fontFamily="@font/yanone"
+            android:text="@string/button2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@+id/ResultQuizButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/ResultQuizButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="55dp"
+            android:background="@drawable/simple_white_button"
+            android:elevation="10dp"
+            android:fontFamily="@font/yanone"
+            android:text="@string/button3"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -143,7 +140,7 @@
     <com.google.android.gms.ads.AdView
         android:id="@+id/adViewHomeScreen"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/adViewHomeScreenHeight"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-4367529646495650/3622381784"
         app:layout_constraintBottom_toBottomOf="parent"

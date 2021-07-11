@@ -25,7 +25,7 @@
         android:fontFamily="@font/poplarstd"
         android:text="@string/quizSubmitted"
         android:textColor="#0583BB"
-        android:textSize="40sp"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greenTick" />
 
@@ -45,7 +45,7 @@
         android:id="@+id/ScoreTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/ScoreTxtTopMargin"
         android:fontFamily="@font/poplarstd"
         android:text="@string/score"
         android:textColor="#FFFFFF"
@@ -102,7 +102,6 @@
         android:layout_marginEnd="40dp"
         android:background="@drawable/simple_white_button"
         android:fontFamily="@font/yanone"
-        android:padding="5dp"
         android:text="@string/button9"
         android:textColor="#0583BB"
         android:textSize="40sp"

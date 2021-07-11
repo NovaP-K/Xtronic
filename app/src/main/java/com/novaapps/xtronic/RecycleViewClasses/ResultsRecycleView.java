@@ -75,10 +75,10 @@ public class ResultsRecycleView extends RecyclerView.Adapter<ResultsRecycleView.
         return IDList.size();
     }
 
-    public class ResultsViewHolder extends RecyclerView.ViewHolder{
+    public class ResultsViewHolder extends RecyclerView.ViewHolder {
 
-        TextView QuizCode , QuizDate , QuizTopic ;
-        CardView resultsCardView ;
+        TextView QuizCode, QuizDate, QuizTopic;
+        CardView resultsCardView;
 
         public ResultsViewHolder(@NonNull View itemView) {
             super(itemView);

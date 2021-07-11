@@ -1,18 +1,16 @@
 package com.novaapps.xtronic;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.novaapps.xtronic.helpingclass.QuizBasicInfoData;
+import com.novaapps.xtronic.helpingclass.Encrypto;
 import com.novaapps.xtronic.helpingclass.QuizQuestions;
-import com.novaapps.xtronic.helpingclass.UI_Data;
-
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -33,7 +31,7 @@ public class AnswerSheet extends AppCompatActivity {
     private boolean ToPrevQuestion = false ;
 
     //Objects
-    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<QuizQuestions>();
+    ArrayList<QuizQuestions> questionsArrayList = new ArrayList<>();
     QuizQuestions quizQuestions;
     ArrayList<String> UserAnswer = new ArrayList<>();
 
@@ -100,7 +98,7 @@ public class AnswerSheet extends AppCompatActivity {
         if (ToNxtQuestion)
             Index++;
 
-
+        Encrypto encrypto = new Encrypto();
         quizQuestions = questionsArrayList.get(Index);
 
         QuestionTextView.setText(quizQuestions.getQuestion());
@@ -109,7 +107,7 @@ public class AnswerSheet extends AppCompatActivity {
         Opt2Text = quizQuestions.getOption2();
         Opt3Text = quizQuestions.getOption3();
         Opt4Text = quizQuestions.getOption4();
-        CorrectAns = quizQuestions.getANS();
+        CorrectAns = encrypto.Decrypt(quizQuestions.getANS());
 
         SetDefaultOptionColor();
         CheckIfQuestionIsCorrect();
@@ -224,14 +222,14 @@ public class AnswerSheet extends AppCompatActivity {
             QuestionStatus.setBackgroundResource(R.drawable.correct_q_status);
             QuestionStatus.setText(txt);
             QuestionStatus.setTextColor(getResources().getColor(R.color.CorrectQColor));
-            QuestionStatus.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.check) , null , null , null);
+            QuestionStatus.setCompoundDrawablesWithIntrinsicBounds(ResourcesCompat.getDrawable(getApplicationContext().getResources() , R.drawable.check , getApplicationContext().getTheme()) , null , null , null);
         }
         else{
             String txt = "Wrong Answer";
             QuestionStatus.setBackgroundResource(R.drawable.wrong_q_status);
             QuestionStatus.setText(txt);
             QuestionStatus.setTextColor(getResources().getColor(R.color.WrongQColor));
-            QuestionStatus.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.close_outline) , null , null , null);
+            QuestionStatus.setCompoundDrawablesWithIntrinsicBounds(ResourcesCompat.getDrawable(getApplicationContext().getResources() , R.drawable.close_outline , getApplicationContext().getTheme()) , null , null , null);
         }
     }
     private String getCorrectOptionName(){

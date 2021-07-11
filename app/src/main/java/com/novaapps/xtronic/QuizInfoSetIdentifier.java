@@ -1,8 +1,10 @@
 package com.novaapps.xtronic;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -58,7 +60,7 @@ public class QuizInfoSetIdentifier extends AppCompatActivity {
         ObjectsHooks();
 
 
-
+        CreateMsgAlert();
 
         ProceedButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +146,24 @@ public class QuizInfoSetIdentifier extends AppCompatActivity {
 
 
     }
-
+    private void CreateMsgAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // Add the buttons
+        builder.setNeutralButton("Understood" , new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // User Clicked OK
+                dialogInterface.dismiss();
+            }
+        });
+        // Set other dialog properties
+        builder.setCancelable(false);
+        //Set Dialog Msg
+        builder.setMessage(R.string.SIdentifierHelp);
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
     private String getCurrentDateAndTime(){
 
         Date date = new Date();

@@ -1,16 +1,11 @@
 package com.novaapps.xtronic;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,9 +29,7 @@ import com.novaapps.xtronic.helpingclass.QuizQuestions;
 import com.novaapps.xtronic.helpingclass.UI_Data;
 
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Objects;
 
 public class GetIdentifier extends AppCompatActivity {
@@ -101,19 +94,12 @@ public class GetIdentifier extends AppCompatActivity {
         joinedUserInfo = new JoinedUserInfo();
         uiData = new UI_Data(getApplicationContext());
         customProgress = new CustomProgress(getApplicationContext() , progressView);
-        quizQuestionsArrayList = new ArrayList<QuizQuestions>();
+        quizQuestionsArrayList = new ArrayList<>();
     }
 
     private void SetAskIdentifier(){
         String Ask = "Enter " + quizBasicInfoData.get_IdentifierType();
         EIIdentifier.setText(Ask);
-    }
-
-    private String getCurrentDateAndTime(){
-
-        Date date = new Date();
-
-        return DateFormat.getDateTimeInstance().format(date);
     }
 
     private void getIdentifier(){
@@ -210,7 +196,8 @@ public class GetIdentifier extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (int i = 0; i < QSize; i++) {
-                        QuizQuestions quizQuestions = new QuizQuestions();
+                        new QuizQuestions();
+                        QuizQuestions quizQuestions;
                         quizQuestions = snapshot.child(String.valueOf(i)).getValue(QuizQuestions.class);
                         quizQuestionsArrayList.add(quizQuestions);
                     }
@@ -218,7 +205,7 @@ public class GetIdentifier extends AppCompatActivity {
                     if (QSize == quizQuestionsArrayList.size())
                         UpdateEnrolledUser();
                 }else
-                    CreateMsgAlert("Internal Error : Question List Empty \n Contact Quiz creator"  );
+                    CreateMsgAlert();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -228,14 +215,14 @@ public class GetIdentifier extends AppCompatActivity {
           });
 
        }
-    private void CreateMsgAlert(String Msg){
+    private void CreateMsgAlert(){
         customProgress.stopProgressBar();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         // Set other dialog properties
         builder.setCancelable(true);
         //Set Dialog Msg
-        builder.setMessage(Msg);
+        builder.setMessage("Internal Error : Question List Empty \n Contact Quiz creator");
         builder.setTitle("Error");
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
